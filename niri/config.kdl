@@ -1,0 +1,120 @@
+// startup
+spawn-at-startup "bash" "-c" "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE"
+spawn-at-startup "mpd"
+
+spawn-at-startup "swaybg" "-i" "/home/leaf/Pictures/wallpapers/wallpaper_5.jpg"
+
+// keybinds
+binds {
+  Mod+Return { spawn "alacritty"; }
+  Mod+O repeat=false { toggle-overview; }
+  Mod+Q { close-window; }
+  Mod+Space { spawn "wofi" "--show=drun"; }
+  Mod+X { spawn "swaylock" "-ui" "/home/leaf/Pictures/wallpapers/wallpaper_5.jpg";}
+  Mod+Shift+Q { quit; }
+  Mod+S { spawn "gamescope" "-ef" "--" "/usr/bin/steam" "--tenfoot"; }
+
+  Mod+Left  { focus-column-left; }
+  Mod+Down  { focus-window-down; }
+  Mod+Up    { focus-window-up; }
+  Mod+Right { focus-column-right; }
+  Mod+H     { focus-column-left; }
+  Mod+L     { focus-column-right; }
+  Mod+J     { focus-window-or-workspace-down; }
+  Mod+K     { focus-window-or-workspace-up; }
+
+
+
+  Mod+Shift+Left  { move-column-left; }
+  Mod+Shift+Down  { move-window-down; }
+  Mod+Shift+Up    { move-window-up; }
+  Mod+Shift+Right { move-column-right; }
+  Mod+Shift+H     { move-column-left; }
+  Mod+Shift+J     { move-window-down-or-to-workspace-down; }
+  Mod+Shift+K     { move-window-up-or-to-workspace-up; }
+  Mod+Shift+L     { move-column-right; }
+
+  Mod+1 { focus-workspace 1; }
+  Mod+2 { focus-workspace 2; }
+  Mod+3 { focus-workspace 3; }
+  Mod+4 { focus-workspace 4; }
+  Mod+5 { focus-workspace 5; }
+  Mod+6 { focus-workspace 6; }
+  Mod+7 { focus-workspace 7; }
+  Mod+8 { focus-workspace 8; }
+  Mod+9 { focus-workspace 9; }
+  Mod+Shift+1 { move-window-to-workspace 1; }
+  Mod+Shift+2 { move-window-to-workspace 2; }
+  Mod+Shift+3 { move-window-to-workspace 3; }
+  Mod+Shift+4 { move-window-to-workspace 4; }
+  Mod+Shift+5 { move-window-to-workspace 5; }
+  Mod+Shift+6 { move-window-to-workspace 6; }
+  Mod+Shift+7 { move-window-to-workspace 7; }
+  Mod+Shift+8 { move-window-to-workspace 8; }
+  Mod+Shift+9 { move-window-to-workspace 9; }
+
+  Mod+Shift+E { quit; }
+  Mod+F { maximize-column; }
+  Mod+Minus { set-column-width "-10%"; }
+  Mod+Equal { set-column-width "+10%"; }
+
+  XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_SINK@" "0.01+"; }
+  XF86AudioLowerVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_SINK@" "0.01-"; }
+  XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_SINK@" "toggle"; }
+  XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+2%"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "2%-"; }
+  XF86AudioPlay         allow-when-locked=true { spawn "mpc" "toggle"; }
+  XF86AudioNext         allow-when-locked=true { spawn "mpc" "next"; }
+  XF86AudioPrev         allow-when-locked=true { spawn "mpc" "prev"; }
+  XF86AudioStop         allow-when-locked=true { spawn "mpc" "stop"; }
+}
+
+input {
+  keyboard {
+    xkb { }
+
+    numlock
+    repeat-delay 300
+    repeat-rate 50
+    track-layout "global"
+  }
+
+  touchpad {
+    tap
+    drag true
+    scroll-factor horizontal=2.0 vertical=-1.0
+  }
+}
+
+// aesthetics
+prefer-no-csd
+
+layout {
+  gaps 10
+  center-focused-column "never"
+  focus-ring {
+    off
+  }
+  border {
+    off
+  }
+  shadow {
+    off
+  }
+}
+
+overview {
+    zoom 0.5
+}
+
+animations {
+  slowdown 0.5
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+blur {
+  off
+}
