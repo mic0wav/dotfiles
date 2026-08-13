@@ -1,18 +1,16 @@
 // startup
-spawn-at-startup "bash" "-c" "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE && dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE"
-spawn-at-startup "mpd"
-
-spawn-at-startup "swaybg" "-i" "/home/leaf/Pictures/wallpapers/wallpaper_5.jpg"
+spawn-at-startup "swaybg" "-i" "/home/leaf/.wallpaper"
+spawn-at-startup "let MOZ_ENABLE_WAYLAND=1"
 
 // keybinds
 binds {
   Mod+Return { spawn "alacritty"; }
   Mod+O repeat=false { toggle-overview; }
   Mod+Q { close-window; }
-  Mod+Space { spawn "wofi" "--show=drun"; }
-  Mod+X { spawn "swaylock" "-ui" "/home/leaf/Pictures/wallpapers/wallpaper_5.jpg";}
+  Mod+Space repeat=false { spawn "fuzzel"; }
+  Mod+X { spawn "swaylock" "-ui" "/home/leaf/.wallpaper";}
   Mod+Shift+Q { quit; }
-  Mod+S { spawn "gamescope" "-ef" "--" "/usr/bin/steam" "--tenfoot"; }
+//  Mod+S { spawn "gamescope" "-ef" "--" "/usr/bin/steam" "--tenfoot"; }
 
   Mod+Left  { focus-column-left; }
   Mod+Down  { focus-window-down; }
@@ -63,10 +61,10 @@ binds {
   XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_SINK@" "toggle"; }
   XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+2%"; }
   XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "2%-"; }
-  XF86AudioPlay         allow-when-locked=true { spawn "mpc" "toggle"; }
-  XF86AudioNext         allow-when-locked=true { spawn "mpc" "next"; }
-  XF86AudioPrev         allow-when-locked=true { spawn "mpc" "prev"; }
-  XF86AudioStop         allow-when-locked=true { spawn "mpc" "stop"; }
+  // XF86AudioPlay         allow-when-locked=true { spawn "mpc" "toggle"; }
+  // XF86AudioNext         allow-when-locked=true { spawn "mpc" "next"; }
+  // XF86AudioPrev         allow-when-locked=true { spawn "mpc" "prev"; }
+  // XF86AudioStop         allow-when-locked=true { spawn "mpc" "stop"; }
 }
 
 input {
@@ -91,7 +89,7 @@ prefer-no-csd
 
 layout {
   gaps 10
-  center-focused-column "never"
+  center-focused-column "on-overflow"
   focus-ring {
     off
   }
@@ -104,11 +102,11 @@ layout {
 }
 
 overview {
-    zoom 0.5
+    zoom 0.7
 }
 
 animations {
-  slowdown 0.5
+  slowdown 0.7
 }
 
 hotkey-overlay {
@@ -117,4 +115,12 @@ hotkey-overlay {
 
 blur {
   off
+}
+
+cursor {
+  xcursor-theme "Bibata-Modern-Ice"
+  xcursor-size 16
+
+  hide-when-typing
+  hide-after-inactive-ms 1000
 }
