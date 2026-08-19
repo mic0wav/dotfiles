@@ -1,13 +1,13 @@
+eval "$(starship init zsh)"
 
-PROMPT='%{$fg_bold[cyan]%}  %c %{$reset_color%}'
-
-alias l='ls -lhF'
-alias ll='ls -lah'
-alias la='ls -A'
-alias lm='ls -m'
-alias lr='ls -R'
-alias lg='ls -l --group-directories-first'
-alias sl='ls'
+alias ls='ls -F --group-directories=first'
+alias l='ls -lhF --group-directories=first'
+alias ll='ls -lah --group-directories=first'
+alias la='ls -A --group-directories=first'
+alias lm='ls -m --group-directories=first'
+alias lr='ls -R --group-directories=first'
+alias lg='ls -l --group-directories=first'
+alias sl='ls -F --group-directories=first'
 
 # git
 alias gcl='git clone --depth 1'
@@ -20,6 +20,4 @@ alias gp='git push origin master'
 alias c='clear'
 alias q='exit'
 alias v='nvim'
-
-#zoxide
-eval "$(zoxide init zsh)"
+alias bat='cat /sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0A:00/power_supply/BAT0/capacity'
