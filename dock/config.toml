@@ -1,0 +1,2 @@
+icons = ["firefox", "Terminal", "nvim"]
+commands = ["firefox", "alacritty", "alacritty -e nvim"]

@@ -1,12 +1,11 @@
 return {
   {
-    "olimorris/onedarkpro.nvim",
+    "mic0wav/hillside",
     lazy = false,
     priority = 1000,
 
     config = function()
-      require("onedarkpro").setup({})
-      vim.cmd([[colo onedark]])
+      vim.cmd([[colo hillside]])
     end,
   },
   {
@@ -44,6 +43,23 @@ return {
     "mason-org/mason.nvim",
     opts = {
       ensure_installed = { "emmylua_ls" },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      servers = {
+        lua_ls = false,
+        emmylua_ls = {
+          settings = {
+            emmylua = {
+              runtime = { version = "LuaJIT" },
+              diagnostics = { globals = { "vim" } },
+              workspace = { library = { vim.env.VIMRUNTIME } },
+            },
+          },
+        },
+      },
     },
   },
 }

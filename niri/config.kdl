@@ -1,16 +1,16 @@
 // startup
 spawn-at-startup "swaybg" "-i" "/home/leaf/.wallpaper"
-spawn-at-startup "let MOZ_ENABLE_WAYLAND=1"
+spawn-at-startup "export MOZ_ENABLE_WAYLAND=1"
+spawn-at-startup "/home/leaf/dev/dock/target/release/dock"
 
 // keybinds
 binds {
   Mod+Return { spawn "alacritty"; }
   Mod+O repeat=false { toggle-overview; }
   Mod+Q { close-window; }
-  Mod+Space repeat=false { spawn "fuzzel"; }
-  Mod+X { spawn "swaylock" "-ui" "/home/leaf/.wallpaper";}
   Mod+Shift+Q { quit; }
-//  Mod+S { spawn "gamescope" "-ef" "--" "/usr/bin/steam" "--tenfoot"; }
+  Mod+X repeat=false { spawn "swaylock"; }
+  Mod+P { screenshot; }
 
   Mod+Left  { focus-column-left; }
   Mod+Down  { focus-window-down; }
@@ -20,8 +20,6 @@ binds {
   Mod+L     { focus-column-right; }
   Mod+J     { focus-window-or-workspace-down; }
   Mod+K     { focus-window-or-workspace-up; }
-
-
 
   Mod+Shift+Left  { move-column-left; }
   Mod+Shift+Down  { move-window-down; }
@@ -84,12 +82,20 @@ input {
   }
 }
 
+screenshot-path null
+
 // aesthetics
 prefer-no-csd
+
+layer-rule {
+  match namespace="^wallpaper$"
+  place-within-backdrop true
+}
 
 layout {
   gaps 10
   center-focused-column "on-overflow"
+  always-center-single-column
   focus-ring {
     off
   }
@@ -99,14 +105,14 @@ layout {
   shadow {
     off
   }
+  background-color "transparent"
 }
 
 overview {
-    zoom 0.7
-}
-
-animations {
-  slowdown 0.7
+  zoom 0.7
+  workspace-shadow {
+    off
+  }
 }
 
 hotkey-overlay {
@@ -124,3 +130,4 @@ cursor {
   hide-when-typing
   hide-after-inactive-ms 1000
 }
+
