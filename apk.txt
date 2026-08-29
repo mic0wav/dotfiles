@@ -10,7 +10,6 @@ clang
 cmd:make
 cmd:pkg-config
 curl
-fd
 ffmpeg
 firefox
 firmware-linux-brcm
@@ -20,6 +19,7 @@ git
 glib-devel
 gtk4-devel
 gtk4-layer-shell-devel
+helix
 htop
 imagemagick
 initramfs-tools
@@ -27,18 +27,18 @@ linux-headers
 linux-lts
 linux-pam
 linux-pam-devel
-neovim
 niri
 pango-devel
+pipewire-alsa
 pkgconf
-ripgrep
+rust-clippy
 sqlite
 starship
 swaybg
 swaylock
 systemd-boot
+tlp
 tmux
-tree-sitter-cli
 unzip
 wayclip
 wayland

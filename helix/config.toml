@@ -1,0 +1,64 @@
+theme = "base16_terminal"
+
+[editor]
+
+cursorline = true
+bufferline = "multiple"
+
+color-modes = true
+true-color = true
+gutters = ["diagnostics", "diff", "spacer"]
+
+lsp.display-inlay-hints = true
+
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+jump-label-alphabet = "hfjdksla"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.statusline]
+left = []
+center = []
+right = []
+
+[editor.indent-guides]
+render = true
+character = "╎"
+
+[keys.insert]
+j = { k = "normal_mode" }
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+esc = "no_op"
+
+[keys.normal]
+"ret" = "goto_word"
+C-r = ":config-reload"
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"
+
+[keys.select]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+pageup = "no_op"
+pagedown = "no_op"
+home = "no_op"
+end = "no_op"

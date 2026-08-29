@@ -9,6 +9,13 @@
     border: 0 solid transparent;
 }
 
+label {
+    color: var(--fg1);
+    font-family: "Monaspace Neon NF";
+    font-size: 15px;
+    font-weight: 400;
+}
+
 window {
     background-color: transparent;
 }
@@ -32,7 +39,7 @@ window {
     border-radius: 8px;
     background-image: none;
     background-color: var(--bg2);
-    /*transition: 150ms ease-in-out;*/
+
 }
 
 .app:active {
@@ -43,14 +50,4 @@ window {
     background-color: var(--accent);
 }
 
-/*
-.active {
-    background-color: var(--fg1);
-}
 
-
-.active:hover {
-    background-color: var(--fg1);
-    filter: brightness(90%);
-}
-*/

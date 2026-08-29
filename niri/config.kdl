@@ -82,7 +82,7 @@ input {
   }
 }
 
-screenshot-path null
+screenshot-path "~/img/%Y-%m-%d %H-%M-%S.png"
 
 // aesthetics
 prefer-no-csd
@@ -131,3 +131,7 @@ cursor {
   hide-after-inactive-ms 1000
 }
 
+window-rule {
+  geometry-corner-radius 6
+  clip-to-geometry true
+}
