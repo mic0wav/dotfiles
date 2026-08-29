@@ -1,5 +1,7 @@
 eval "$(starship init zsh)"
 
+
+# ls
 alias ls='ls -F --group-directories=first'
 alias l='ls -lhF --group-directories=first'
 alias ll='ls -lah --group-directories=first'
@@ -16,8 +18,15 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
+# tmux
+alias t='tmux'
+alias ta='tmux attach'
+
 # general
 alias c='clear'
 alias q='exit'
-alias v='nvim'
+alias v='hx'
 alias bat='cat /sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0A:00/power_supply/BAT0/capacity'
+
+export EDITOR=hx
+export VISUAL=hx
