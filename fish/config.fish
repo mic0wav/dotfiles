@@ -1,5 +1,6 @@
-eval "$(starship init zsh)"
+set -g fish_greeting
 
+starship init fish | source
 
 # ls
 alias ls='ls -F --group-directories=first'
@@ -18,6 +19,8 @@ alias ga='git add'
 alias gc='git commit -m'
 alias gp='git push origin master'
 
+abbr -a g git
+
 # tmux
 alias t='tmux'
 alias ta='tmux attach'
@@ -28,5 +31,5 @@ alias q='exit'
 alias v='hx'
 alias bat='cat /sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0A:00/power_supply/BAT0/capacity'
 
-export EDITOR=hx
-export VISUAL=hx
+set -gx EDITOR hx
+set -gx VISUAL hx

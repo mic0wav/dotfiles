@@ -5,7 +5,7 @@ live_config_reload = true
 ipc_socket = true
 
 [terminal]
-shell = "zsh"
+shell = "fish"
 
 [window]
 dynamic_padding = true

@@ -14,7 +14,7 @@ lsp.display-inlay-hints = true
 trim-final-newlines = true
 trim-trailing-whitespace = true
 
-jump-label-alphabet = "hfjdksla"
+jump-label-alphabet = "hfjdkslaurieowpq"
 
 [editor.inline-diagnostics]
 cursor-line = "hint"

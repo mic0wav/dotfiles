@@ -1,14 +1,11 @@
 // startup
-spawn-at-startup "swaybg" "-i" "/home/leaf/.wallpaper"
-spawn-at-startup "export MOZ_ENABLE_WAYLAND=1"
+spawn-at-startup "/usr/bin/awww-daemon"
 spawn-at-startup "/home/leaf/dev/dock/target/release/dock"
 
 // keybinds
 binds {
   Mod+Return { spawn "alacritty"; }
-  Mod+O repeat=false { toggle-overview; }
   Mod+Q { close-window; }
-  Mod+Shift+Q { quit; }
   Mod+X repeat=false { spawn "swaylock"; }
   Mod+P { screenshot; }
 
@@ -59,10 +56,6 @@ binds {
   XF86AudioMute         allow-when-locked=true { spawn "wpctl" "set-mute" "@DEFAULT_SINK@" "toggle"; }
   XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+2%"; }
   XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "2%-"; }
-  // XF86AudioPlay         allow-when-locked=true { spawn "mpc" "toggle"; }
-  // XF86AudioNext         allow-when-locked=true { spawn "mpc" "next"; }
-  // XF86AudioPrev         allow-when-locked=true { spawn "mpc" "prev"; }
-  // XF86AudioStop         allow-when-locked=true { spawn "mpc" "stop"; }
 }
 
 input {
@@ -86,11 +79,6 @@ screenshot-path "~/img/%Y-%m-%d %H-%M-%S.png"
 
 // aesthetics
 prefer-no-csd
-
-layer-rule {
-  match namespace="^wallpaper$"
-  place-within-backdrop true
-}
 
 layout {
   gaps 10

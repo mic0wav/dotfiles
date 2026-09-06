@@ -1,2 +1,2 @@
-icons = ["firefox", "Terminal", "helix"]
+icons = ["firefox", "terminal", "helix"]
 commands = ["firefox", "alacritty", "alacritty -e hx"]
