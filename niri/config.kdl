@@ -1,7 +1,7 @@
 // startup
 spawn-at-startup "/usr/bin/modprobe snd_hda_intel"
 spawn-at-startup "/usr/bin/awww-daemon"
-spawn-at-startup "/home/leaf/dev/dock-v2/target/release/dock"
+spawn-at-startup "/home/leaf/dev/dock/target/release/dock"
 
 // keybinds
 binds {
