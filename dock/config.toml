@@ -1,2 +1,14 @@
-icons = ["firefox", "terminal", "helix"]
-commands = ["firefox", "alacritty", "alacritty -e hx"]
+hot_reload = true
+position = "bottom"
+
+[pinned.firefox]
+icon = "firefox"
+command = "firefox"
+
+[pinned.terminal]
+icon = "terminal"
+command = "foot"
+
+[pinned.helix]
+icon = "helix"
+command = "foot hx ~/"

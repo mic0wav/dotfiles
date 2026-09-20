@@ -7,7 +7,7 @@ bufferline = "multiple"
 
 color-modes = true
 true-color = true
-gutters = ["diagnostics", "diff", "spacer"]
+gutters = [ "diff", "diagnostics"]
 
 lsp.display-inlay-hints = true
 
@@ -34,7 +34,7 @@ render = true
 character = "╎"
 
 [keys.insert]
-j = { k = "normal_mode" }
+j = { j = "normal_mode" }
 pageup = "no_op"
 pagedown = "no_op"
 home = "no_op"

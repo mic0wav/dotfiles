@@ -1,8 +1,8 @@
 :root {
-    --bg1: #1e2124;
-    --bg2: #282b2f;
-    --fg1: #e4e3dd;
-    --accent: #60bac7;
+    --bg1: #14212A;
+    --bg2: #14212A;
+    --fg1: #DCE7EB;
+    --accent: #6F9AA9;
 }
 
 * {
@@ -22,9 +22,9 @@ window {
 
 .dock {
     background-color: var(--bg1);
-    border: 4px solid var(--bg2);
-    padding: 8px;
-    border-radius: 18px;
+    border: 0px solid var(--bg2);
+    padding: 6px;
+    border-radius: 12px;
 }
 
 .indicator {

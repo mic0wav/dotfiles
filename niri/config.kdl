@@ -1,10 +1,12 @@
 // startup
+spawn-at-startup "/usr/bin/modprobe snd_hda_intel"
 spawn-at-startup "/usr/bin/awww-daemon"
-spawn-at-startup "/home/leaf/dev/dock/target/release/dock"
+spawn-at-startup "/home/leaf/dev/dock-v2/target/release/dock"
 
 // keybinds
 binds {
-  Mod+Return { spawn "alacritty"; }
+  Mod+Return { spawn "foot"; }
+  Mod+Space {  toggle-window-floating; }
   Mod+Q { close-window; }
   Mod+X repeat=false { spawn "swaylock"; }
   Mod+P { screenshot; }
@@ -75,10 +77,18 @@ input {
   }
 }
 
+gestures {
+  hot-corners {
+    off
+  }
+}
+
 screenshot-path "~/img/%Y-%m-%d %H-%M-%S.png"
 
 // aesthetics
 prefer-no-csd
+
+include "animations.kdl"
 
 layout {
   gaps 10
@@ -104,7 +114,7 @@ overview {
 }
 
 hotkey-overlay {
-    skip-at-startup
+  skip-at-startup
 }
 
 blur {
@@ -122,4 +132,9 @@ cursor {
 window-rule {
   geometry-corner-radius 6
   clip-to-geometry true
+}
+
+layer-rule {
+  match namespace="^awww-daemonbackdrop$"
+  place-within-backdrop true
 }

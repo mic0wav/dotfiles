@@ -3,3 +3,8 @@ command = "/home/leaf/.cargo/bin/rust-analyzer"
 
 [[language]]
 name = "rust"
+
+[[language]]
+name = "markdown"
+file-types = ["md", "markdown"]
+soft-wrap = { enable = true, wrap-indicator = "" }

@@ -29,7 +29,8 @@ alias ta='tmux attach'
 alias c='clear'
 alias q='exit'
 alias v='hx'
-alias bat='cat /sys/devices/LNXSYSTM:00/LNXSYBUS:00/PNP0C0A:00/power_supply/BAT0/capacity'
+alias bat='cat /sys/class/power_supply/BAT0/capacity'
+alias wal "awww img --transition-type any --transition-step 30"
 
 set -gx EDITOR hx
 set -gx VISUAL hx
